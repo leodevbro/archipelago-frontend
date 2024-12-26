@@ -22,6 +22,23 @@ setTimeout(() => {
 
 //
 
+export const ImgTest = () => {
+  return (
+    <div>
+      <p>public</p>
+      <p>{viteLogo}</p>
+      <img src={viteLogo} />
+
+      <br />
+      <br />
+
+      <p>assets</p>
+      <p>{reactLogo}</p>
+      <img src={reactLogo} />
+    </div>
+  );
+};
+
 function App() {
   const [count, setCount] = useState(0);
 
@@ -29,14 +46,7 @@ function App() {
     <div>
       <div onClick={() => setCount((prev) => prev + 1)}>{count}</div>
 
-      <p>reactLogo</p>
-      <p>{reactLogo}</p>
-
-      <br />
-      <br />
-
-      <p>viteLogo</p>
-      <p>{viteLogo}</p>
+      {/* <ImgTest /> */}
     </div>
   );
 }
