@@ -1,26 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css';
+
+//
+
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
+
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+console.log(typeof supabase, supabase);
+
+//
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div>
-    <div onClick={() => setCount((prev) => prev + 1)}>{count}</div>
+      <div onClick={() => setCount((prev) => prev + 1)}>{count}</div>
 
-    <p>{reactLogo}</p>
-    <p>reactLogo</p>
+      <p>{reactLogo}</p>
+      <p>reactLogo</p>
 
-    <br />
-    <br />
+      <br />
+      <br />
 
-    <p>viteLogo</p>
-    <p>{viteLogo}</p>
-
+      <p>viteLogo</p>
+      <p>{viteLogo}</p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
