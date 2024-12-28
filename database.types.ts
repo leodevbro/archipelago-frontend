@@ -9,7 +9,7 @@
 export type Database = {
   public: {
     Tables: {
-      persons: {
+      profiles: {
         Row: {
           aaa: number | null
           created_at: string
