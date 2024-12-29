@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { api } from '../../api/general-bridge';
-import { TyMailAddress } from '../../types/basic';
+import { api } from '../../../api/general-bridge';
+import { TyMailAddress } from '../../../types/basic';
 
 export const PasswordReset = () => {
   const [email, setEmail] = useState('');
@@ -24,7 +24,6 @@ export const PasswordReset = () => {
   };
 
   const handlePasswordReset2 = async () => {
-    // Step 1: Verify the OTP
     const { error: verifyError } = await api.auth.verifyOtp({
       email,
       token,
@@ -35,7 +34,6 @@ export const PasswordReset = () => {
       return;
     }
 
-    // Step 2: Update the user's password
     const { error: updateError } = await api.auth.updateUser({
       password: newPassword,
     });
